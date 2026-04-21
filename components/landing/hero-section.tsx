@@ -145,12 +145,12 @@ export function HeroSection() {
 
             {/* Heading */}
             <h1
-              className="font-outfit text-xl sm:text-2xl lg:text-[48px] font-bold text-foreground mb-6 leading-[1.2] tracking-tight animate-fade-up"
+              className="font-outfit text-xl sm:text-2xl lg:text-[48px] font-bold text-foreground mb-6 leading-[1.1] tracking-tight animate-fade-up"
               style={{
                 animationDelay: "0.1s",
                 display: "flex",
                 flexDirection: "column",
-                gap: "8px"
+                gap: "2px"
               }}
             >
               <span>
@@ -164,7 +164,6 @@ export function HeroSection() {
                   {rotatingTexts[currentTextIndex]}
                 </span>
               </span>
-              <br className="hidden lg:block" />
               <span>role faster with AI.</span>
             </h1>
 
