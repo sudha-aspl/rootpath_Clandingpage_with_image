@@ -234,3 +234,11 @@
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+
+/* Hide Next.js Development Overlay Button */
+nextjs-portal, 
+#nextjs-dev-indicator,
+.__next-dev-overlay,
+.nextjs-static-indicator-container {
+  display: none !important;
+}
