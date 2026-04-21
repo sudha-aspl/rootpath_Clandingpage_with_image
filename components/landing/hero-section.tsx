@@ -145,26 +145,20 @@ export function HeroSection() {
 
             {/* Heading */}
             <h1
-              className="font-outfit text-xl sm:text-2xl lg:text-[48px] font-bold text-foreground mb-6 leading-[1.1] tracking-tight animate-fade-up"
-              style={{
-                animationDelay: "0.1s",
-                display: "flex",
-                flexDirection: "column",
-                gap: "2px"
-              }}
+              className="font-outfit text-xl sm:text-2xl lg:text-[48px] font-bold text-foreground mb-6 leading-none tracking-tight animate-fade-up"
+              style={{ animationDelay: "0.1s" }}
             >
-              <span>
-                Find your dream{" "}
-                <span
-                  className={`animate-gradient-text transition-all duration-500 inline-block px-1 ${isAnimating
-                    ? "opacity-0 -translate-y-2 blur-sm"
-                    : "opacity-100 translate-y-0 blur-0"
-                    }`}
-                >
-                  {rotatingTexts[currentTextIndex]}
-                </span>
+              Find your dream{" "}
+              <span
+                className={`animate-gradient-text transition-all duration-500 inline-block px-1 ${isAnimating
+                  ? "opacity-0 -translate-y-2 blur-sm"
+                  : "opacity-100 translate-y-0 blur-0"
+                  }`}
+              >
+                {rotatingTexts[currentTextIndex]}
               </span>
-              <span>role faster with AI.</span>
+              <br className="hidden lg:block" />
+              role faster with AI.
             </h1>
 
             {/* Subheading */}
