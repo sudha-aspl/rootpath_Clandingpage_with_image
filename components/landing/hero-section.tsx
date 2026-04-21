@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search, MapPin, ArrowRight, Star, ChevronDown, Check } from "lucide-react"
@@ -138,10 +137,10 @@ export function HeroSection() {
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-10 items-center">
+        <div className="max-w-4xl mx-auto">
 
           {/* Left: Text + Search */}
-          <div className="text-center lg:text-left">
+          <div className="text-center">
 
             {/* Heading */}
             <h1
@@ -163,7 +162,7 @@ export function HeroSection() {
 
             {/* Subheading */}
             <p
-              className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-5 leading-relaxed text-pretty animate-fade-up"
+              className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto mb-5 leading-relaxed text-pretty animate-fade-up"
               style={{ animationDelay: "0.3s" }}
             >
               Discover jobs matched to your skills and career goals at leading
@@ -172,15 +171,15 @@ export function HeroSection() {
 
             {/* ✅ Search Bar — fully custom select, no Radix */}
             <div
-              className="relative max-w-2xl mx-auto lg:mx-0 animate-fade-up"
+              className="relative max-w-2xl mx-auto animate-fade-up"
               style={{ animationDelay: "0.5s" }}
             >
-              <div className="absolute -inset-1 rounded-2xl opacity-60 blur-md shimmer-border" />
-              <div className="relative bg-card rounded-2xl shadow-2xl border border-border/50 p-2">
+              <div className="absolute -inset-1 rounded-full opacity-60 blur-md shimmer-border" />
+              <div className="relative bg-card rounded-full shadow-2xl border border-border/50 p-2">
                 <div className="flex flex-col md:flex-row md:items-stretch gap-2">
 
                   {/* Keyword input */}
-                  <div className="flex-1 min-w-0 flex items-center bg-secondary/40 hover:bg-secondary/60 focus-within:bg-secondary/70 focus-within:ring-2 focus-within:ring-primary/20 transition-all rounded-xl px-3 group">
+                  <div className="flex-1 min-w-0 flex items-center bg-secondary/40 hover:bg-secondary/60 focus-within:bg-secondary/70 focus-within:ring-2 focus-within:ring-primary/20 transition-all rounded-full px-3 group">
                     <Search className="w-4 h-4 shrink-0 transition-colors text-muted-foreground/30 group-focus-within:text-primary" />
                     <Input
                       type="text"
@@ -204,7 +203,7 @@ export function HeroSection() {
                       type="button"
                       onClick={() => setDropdownOpen((o) => !o)}
                       className={`
-                        w-full h-11 flex items-center gap-2 px-3 rounded-xl text-sm transition-all
+                        w-full h-11 flex items-center gap-2 px-3 rounded-full text-sm transition-all
                         bg-secondary/40 hover:bg-secondary/60
                         ${dropdownOpen ? "bg-secondary/70 ring-2 ring-primary/20" : ""}
                       `}
@@ -258,7 +257,7 @@ export function HeroSection() {
                   {/* Search button */}
                   <Button
                     size="lg"
-                    className="h-11 w-full md:w-auto px-6 text-white rounded-xl text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all shrink-0"
+                    className="h-11 w-full md:w-auto px-8 text-white rounded-full text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all shrink-0"
                     style={{
                       background: "linear-gradient(90deg, #0096D1, #0096D1, #0096D1)",
                     }}
@@ -274,7 +273,7 @@ export function HeroSection() {
 
             {/* Popular searches */}
             <div
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mt-4 animate-fade-up"
+              className="flex flex-wrap items-center justify-center gap-2 mt-4 animate-fade-up"
               style={{ animationDelay: "0.6s" }}
             >
               <span className="text-sm text-muted-foreground mr-1">Trending:</span>
@@ -290,7 +289,7 @@ export function HeroSection() {
 
             {/* Trust indicators */}
             <div
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-5 mt-5 animate-fade-up"
+              className="flex flex-wrap items-center justify-center gap-5 mt-5 animate-fade-up"
               style={{ animationDelay: "0.7s" }}
             >
               <div className="flex items-center gap-2">
@@ -322,28 +321,6 @@ export function HeroSection() {
               </div>
             </div>
 
-          </div>
-
-          {/* Right: Professional Image */}
-          <div
-            className="relative hidden lg:block animate-fade-up"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <div
-              className="absolute -inset-10 rounded-[3rem] opacity-[0.08] blur-3xl"
-              style={{ background: "linear-gradient(135deg, #0096D1, #0096D1, #0096D1)" }}
-            />
-            <div className="relative aspect-[5/6] max-h-[calc(100vh-8rem)] mx-auto rounded-[2rem] overflow-hidden shadow-2xl border border-border/50 bg-card">
-              <Image
-                src="/images/hero-professional.jpg"
-                alt="Professional using RootPath to find their dream job"
-                fill
-                priority
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#0096D1]/5 via-transparent to-[#0096D1]/5" />
-            </div>
           </div>
 
         </div>
