@@ -144,25 +144,37 @@ export function HeroSection() {
 
             {/* Heading */}
             <h1
-              className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 leading-tight tracking-tight text-balance animate-fade-up"
-              style={{ animationDelay: "0.1s" }}
+              className="font-outfit text-xl sm:text-2xl lg:text-[32px] font-bold text-foreground mb-6 leading-none tracking-tight animate-fade-up"
+              style={{
+                animationDelay: "0.1s",
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                textAlign: "center",
+                alignItems: "center",
+                height: "auto",
+                overflow: "visible",
+                whiteSpace: "nowrap",
+                gap: "8px"
+              }}
             >
-              Find your dream{" "}
-              <span
-                className={`animate-gradient-text transition-all duration-500 inline-block ${isAnimating
-                  ? "opacity-0 -translate-y-3 blur-sm"
-                  : "opacity-100 translate-y-0 blur-0"
-                  }`}
-              >
-                {rotatingTexts[currentTextIndex]}
+              <span>
+                Find your dream{" "}
+                <span
+                  className={`animate-gradient-text transition-all duration-500 inline-block px-1 ${isAnimating
+                    ? "opacity-0 -translate-y-2 blur-sm"
+                    : "opacity-100 translate-y-0 blur-0"
+                    }`}
+                >
+                  {rotatingTexts[currentTextIndex]}
+                </span>
               </span>
-              <br />
-              role faster with AI.
+              <span>role faster with AI.</span>
             </h1>
 
             {/* Subheading */}
             <p
-              className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto mb-5 leading-relaxed text-pretty animate-fade-up"
+              className="font-outfit text-xs sm:text-sm text-muted-foreground/80 max-w-2xl mx-auto mb-8 leading-relaxed text-pretty animate-fade-up"
               style={{ animationDelay: "0.3s" }}
             >
               Discover jobs matched to your skills and career goals at leading
