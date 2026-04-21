@@ -77,6 +77,7 @@
 @theme inline {
   --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
   --font-serif: var(--font-sora), 'Sora', serif;
+  --font-outfit: var(--font-outfit), 'Outfit', sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -233,4 +234,12 @@
 
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Hide Next.js Development Overlay Button */
+nextjs-portal, 
+#nextjs-dev-indicator,
+.__next-dev-overlay,
+.nextjs-static-indicator-container {
+  display: none !important;
 }
