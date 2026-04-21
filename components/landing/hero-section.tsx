@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search, MapPin, ArrowRight, Star, ChevronDown, Check } from "lucide-react"
@@ -137,24 +138,18 @@ export function HeroSection() {
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-10 items-center">
 
           {/* Left: Text + Search */}
-          <div className="text-center">
+          <div className="text-center lg:text-left">
 
             {/* Heading */}
             <h1
-              className="font-outfit text-xl sm:text-2xl lg:text-[32px] font-bold text-foreground mb-6 leading-none tracking-tight animate-fade-up"
+              className="font-outfit text-xl sm:text-2xl lg:text-[48px] font-bold text-foreground mb-6 leading-[1.2] tracking-tight animate-fade-up"
               style={{
                 animationDelay: "0.1s",
-                width: "100%",
                 display: "flex",
                 flexDirection: "column",
-                textAlign: "center",
-                alignItems: "center",
-                height: "auto",
-                overflow: "visible",
-                whiteSpace: "nowrap",
                 gap: "8px"
               }}
             >
@@ -169,12 +164,13 @@ export function HeroSection() {
                   {rotatingTexts[currentTextIndex]}
                 </span>
               </span>
+              <br className="hidden lg:block" />
               <span>role faster with AI.</span>
             </h1>
 
             {/* Subheading */}
             <p
-              className="font-outfit text-xs sm:text-sm text-muted-foreground/80 max-w-2xl mx-auto mb-8 leading-relaxed text-pretty animate-fade-up"
+              className="font-outfit text-xs sm:text-sm text-muted-foreground/80 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed text-pretty animate-fade-up"
               style={{ animationDelay: "0.3s" }}
             >
               Discover jobs matched to your skills and career goals at leading
@@ -183,7 +179,7 @@ export function HeroSection() {
 
             {/* ✅ Search Bar — fully custom select, no Radix */}
             <div
-              className="relative max-w-2xl mx-auto animate-fade-up"
+              className="relative max-w-2xl mx-auto lg:mx-0 animate-fade-up"
               style={{ animationDelay: "0.5s" }}
             >
               <div className="absolute -inset-1 rounded-full opacity-60 blur-md shimmer-border" />
@@ -285,7 +281,7 @@ export function HeroSection() {
 
             {/* Popular searches */}
             <div
-              className="flex flex-wrap items-center justify-center gap-2 mt-4 animate-fade-up"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mt-4 animate-fade-up"
               style={{ animationDelay: "0.6s" }}
             >
               <span className="text-sm text-muted-foreground mr-1">Trending:</span>
@@ -301,7 +297,7 @@ export function HeroSection() {
 
             {/* Trust indicators */}
             <div
-              className="flex flex-wrap items-center justify-center gap-5 mt-5 animate-fade-up"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-5 mt-5 animate-fade-up"
               style={{ animationDelay: "0.7s" }}
             >
               <div className="flex items-center gap-2">
@@ -333,6 +329,28 @@ export function HeroSection() {
               </div>
             </div>
 
+          </div>
+
+          {/* Right: Professional Image */}
+          <div
+            className="relative hidden lg:block animate-fade-up"
+            style={{ animationDelay: "0.4s" }}
+          >
+            <div
+              className="absolute -inset-10 rounded-[3rem] opacity-[0.08] blur-3xl"
+              style={{ background: "linear-gradient(135deg, #0096D1, #0096D1, #0096D1)" }}
+            />
+            <div className="relative aspect-[5/6] max-h-[calc(100vh-8rem)] mx-auto rounded-[2rem] overflow-hidden shadow-2xl border border-border/50 bg-card">
+              <Image
+                src="/images/hero-professional.jpg"
+                alt="Professional using RootPath to find their dream job"
+                fill
+                priority
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#0096D1]/5 via-transparent to-[#0096D1]/5" />
+            </div>
           </div>
 
         </div>
